@@ -6,11 +6,11 @@ import {
   PutCommand,
   ScanCommand,
 } from '@aws-sdk/lib-dynamodb';
-import { fromIni } from '@aws-sdk/credential-providers';
+// import { fromIni } from '@aws-sdk/credential-providers';
 
 const client = new DynamoDBClient({
   region: 'us-east-1',
-  credentials: fromIni({ profile: 'personal' }),
+  // credentials: fromIni({ profile: 'personal' }), // Perfil de AWS CLI para local
 });
 const dynamo = DynamoDBDocumentClient.from(client);
 const tableName = process.env.PERSONAJES_TABLE as string; // Obtén el nombre de la tabla de la variable de entorno
